@@ -7,5 +7,9 @@ if [ ! -f "$build_dir/static.json" ]; then
     exit 1
 fi
 
-echo 'Static HTML'
+if [ ! -f "$build_dir/angular.json" ]; then
+    exit 1
+fi
+
+echo 'Angular Application'
 exit 0
