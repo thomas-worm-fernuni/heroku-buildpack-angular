@@ -1,4 +1,4 @@
-# heroku-buildpack-static
+# heroku-buildpack-angular
 **NOTE**: This buildpack is in an experimental OSS project.
 
 This is a buildpack for handling static sites and single page web apps.

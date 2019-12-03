@@ -8,6 +8,12 @@ cache_dir=$2
 env_dir=$3
 bp_dir=$(dirname $(dirname $0))
 
+curl -L https://nodejs.org/download/release/latest-v12.x/node-v12.13.1-linux-x64.tar.gz | tar xzC $build_dir
+export NODEJS_HOME=$build_dir/node-v12.13.1-linux-x64
+export PATH=$PATH:$NODEJS_HOME/bin
+yes "" | npm install -g npm
+yes "" | npm install -g @angular/cli
+
 fetch_nginx_tarball() {
     local version="1.9.7"
     local tarball_file="nginx-$version.tgz"
@@ -32,5 +38,9 @@ mkdir -p $build_dir/config
 cp $bp_dir/scripts/config/templates/mime.types $build_dir/config
 
 mkdir -p $build_dir/logs
+
+ng build
+
+rm -rf $NODEJS_HOME
 
 exit 0

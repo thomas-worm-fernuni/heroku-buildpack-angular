@@ -4,7 +4,7 @@ require_relative 'nginx_config_util'
 
 class NginxConfig
   DEFAULT = {
-    root: "public_html/",
+    root: "dist/",
     encoding: "UTF-8",
     canonical_host: false,
     clean_urls: false,
