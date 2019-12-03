@@ -39,7 +39,8 @@ cp $bp_dir/scripts/config/templates/mime.types $build_dir/config
 
 mkdir -p $build_dir/logs
 
-ng build
+yes "" | npm install
+yes "" | ng build
 
 rm -rf $NODEJS_HOME
 
