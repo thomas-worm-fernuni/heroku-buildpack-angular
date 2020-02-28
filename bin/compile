@@ -35,8 +35,7 @@ cp -a $bp_dir/scripts/{boot,config} -t $build_dir/bin/
 echo "-----> Installed ${nginx_version} to /app/bin"
 
 curl "https://dl.eff.org/certbot-auto" -o $build_dir/bin/certbot-auto
-chown root $build_dir/bin/certbot-auto
-chmod 0755 $build_dir/bin/certbot-auto
+chmod +x $build_dir/bin/certbot-auto
 
 mkdir -p $build_dir/config
 cp $bp_dir/scripts/config/templates/mime.types $build_dir/config
